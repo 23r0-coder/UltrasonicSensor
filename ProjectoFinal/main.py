@@ -2,6 +2,7 @@ import time
 import warnings
 from pythonArduinoConnection import *
 import pulsein
+import lcd
 
 def CalcDistance():
     """
