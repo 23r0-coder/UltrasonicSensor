@@ -23,6 +23,7 @@ def SaveData(distance):
 #Main process
 while True:
     #warnings.Start_Trigger()
+    #Trial value
     warnings.Warnings(10)
     # Warnings(15)
     # Warnings(30)
