@@ -1,10 +1,12 @@
 import mysql.connector
 
 # Defining the variables that will be used to connect to the database.
-DB_USER 	= "admin"
-PASSWORD 	= "admin123"
-DB_SERVER 	= ""
-DB_NAME 	= "DistanceReads"
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="admin",
+  password="",
+  database="Distance_readings"
+)
 
 
 def connect(self):
@@ -19,3 +21,14 @@ def connect(self):
     except mysql.connector.Error as err:
         print("Failed to connect")
         print(err)
+
+mycursor = mydb.cursor()
+
+sql = "INSERT INTO  (distance, sound, led) VALUES (%s, %s, %s)"
+val = ("15", "2000","Yellow")
+mycursor.execute(sql, val)
+
+mydb.commit()
+
+#display the information inserted.
+print(mycursor.rowcount, "record inserted.")
