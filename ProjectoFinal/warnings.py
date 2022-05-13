@@ -33,6 +33,7 @@ def Warnings(distance):
         board.digital[Green].write(0)
         board.digital[Blue].write(0)
         Buzzer.tone(3000, 200)
+        color = 'RED'
         time.sleep(.5)
     # Yellow
     if distance > 10 and distance <= 20:
@@ -41,6 +42,7 @@ def Warnings(distance):
         board.digital[Blue].write(0)
         board.digital[Buzzer].write(0.2500)
         time.sleep(.5)
+        color = 'YELLOW'
     # Green
     if distance >= 30:
         board.digital[Red].write(0)
@@ -48,6 +50,7 @@ def Warnings(distance):
         board.digital[Blue].write(0)
         board.digital[Buzzer].write(0.2000)
         time.sleep(.5)
+        color = 'GREEN'
     # Turn off
     if distance is None:
         board.digital[Red].write(0)
